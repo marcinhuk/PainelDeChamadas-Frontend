@@ -1,0 +1,126 @@
+main {
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100vh;
+		background-color: #c4c0c060;
+		padding: 2%;
+		gap: 4% 2%;
+
+		.pedido {
+			line-height: 1;
+			font-family: 'digital';
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #052645;
+			flex-grow: 1;
+			color: red;
+			border-radius: 10px;
+			text-shadow: 3px 3px 1px #fff;
+		}
+	}
+
+	.grid1x1 {
+		justify-content: center;
+
+		.pedido {
+			max-width: 60%;
+			font-size: 35vw;
+		}
+	}
+
+	.grid1x2 {
+
+		.pedido {
+			min-width: 49%;
+			font-size: 30vw;
+		}
+	}
+
+	.grid1x3 {
+		align-items: center;
+
+		.pedido {
+			height: 60%;
+			min-width: 32%;
+			font-size: 19vw;
+		}
+	}
+
+	.grid2x1 {
+		justify-content: center;
+
+		.pedido {
+			min-height: 46%;
+			max-height: 50%;
+			min-width: 50%;
+			max-width: 50%;
+			font-size: 20vw;
+		}
+	}
+
+	.grid2x2 {
+		justify-content: center;
+
+		.pedido {
+			min-width: 40%;
+			min-height: 48%;
+			max-width: 40%;
+			font-size: 17vw;
+		}
+	}
+
+	.grid2x3 {
+
+		.pedido {
+			width: 30%;
+			min-height: 48%;
+			font-size: 17vw;
+		}
+	}
+
+	.grid2x4 {
+
+		.pedido {
+			width: 23%;
+			min-height: 48%;
+			font-size: 14vw;
+		}
+	}
+
+	.grid3x1 {
+		justify-content: center;
+
+		.pedido {
+			min-height: 30%;
+			max-height: 50%;
+			min-width: 50%;
+			max-width: 50%;
+			font-size: 12vw;
+		}
+	}
+
+	.grid3x3 {
+		justify-content: center;
+
+		.pedido {
+			min-width: 28%;
+			max-width: 28%;
+			min-height: 30%;
+			font-size: 11vw;
+		}
+	}
+
+	.grid4x1 {
+		justify-content: center;
+
+		.pedido {
+			min-height: 22%;
+			max-height: 50%;
+			min-width: 50%;
+			max-width: 50%;
+			font-size: 8vw;
+		}
+	}
+}

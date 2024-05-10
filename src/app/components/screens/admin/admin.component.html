@@ -1,0 +1,65 @@
+<main>
+
+	<section class="section-forms">
+
+		<article class="article-form1">
+
+			<form autocomplete="off" [formGroup]="formGroupLayout">
+
+				<mat-form-field appearance="outline">
+					<mat-label>Panel visualization layout (row x column)</mat-label>
+					<mat-icon matSuffix>apps</mat-icon>
+					<mat-select  formControlName="layout" (selectionChange)="patchLayout()">
+						<mat-option value="1x1">1 x 1</mat-option>
+						<mat-option value="1x2">1 x 2 </mat-option>
+						<mat-option value="1x3">1 x 3</mat-option>
+						<mat-option value="2x1">2 x 1</mat-option>
+						<mat-option value="2x2">2 x 2</mat-option>
+						<mat-option value="2x3">2 x 3</mat-option>
+						<mat-option value="2x4">2 x 4</mat-option>
+						<mat-option value="3x1">3 x 1</mat-option>
+						<mat-option value="3x3">3 x 3</mat-option>
+						<mat-option value="4x1">4 x 1</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+			</form>
+
+		</article>
+
+		<article class="article-form2">
+
+			<form autocomplete="off" [formGroup]="formGroupOrder">
+
+				<mat-form-field appearance="outline">
+					<mat-label>Order number</mat-label>
+					<input matInput placeholder="Order number" type="number" formControlName="order" minlength="1" maxlength="4" min="1" max="9999">
+					<mat-icon matSuffix>numbers</mat-icon>
+				</mat-form-field>
+
+				<button mat-fab color="primary" (click)="postOrder()" [disabled]="!formGroupOrder.valid">
+					<mat-icon>add</mat-icon>
+				  </button>
+
+				  <mat-slide-toggle [checked]="sound" (toggleChange)="patchSound()">Play sound?</mat-slide-toggle>
+
+			</form>
+
+
+		</article>
+
+	</section>
+
+	<section class="dataGrid" [style.height.px]="dataGridHeight">
+
+		<app-table [dataSource]="dataSource" (list)="getOrders()"></app-table>
+
+	</section>
+
+	<span class="qtdRegistro">{{ qtdRegistro }}</span>
+
+	<button mat-mini-fab color="basic" class="link" routerLink="/">
+		<mat-icon>apps</mat-icon>
+	</button>
+
+</main>

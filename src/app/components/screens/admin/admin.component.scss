@@ -1,0 +1,44 @@
+main {
+	padding: 20px;
+
+	.section-forms {
+		display: flex;
+		column-gap: 10px;
+
+		.article-form1, .article-form2 {
+			flex-grow: 1;
+
+			form {
+				display: flex;
+
+				mat-form-field {
+					flex-grow: 1;
+				}
+			}
+
+		}
+
+		.article-form2 {
+
+			form {
+				column-gap: 10px;
+
+				mat-slide-toggle {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	.dataGrid {
+		overflow-y: scroll;
+		border: 1px solid #E0E0E0;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	}
+
+	.qtdRegistro {
+		position: fixed;
+		left: 20px;
+		bottom: 20px;
+	}
+}

@@ -1,0 +1,39 @@
+.mat-mdc-table {
+	width: 100%;
+
+	.mat-mdc-header-row{
+		height: 40px;
+	}
+
+	.mat-mdc-row {
+		height: 30px;
+
+		mat-icon {
+			cursor: pointer;
+		}
+	}
+
+	.mat-mdc-row:hover{
+		background-color: #f0f0f0;
+		text-shadow: 1px 1px 5px #1e1c1c9e;
+	}
+
+	.mat-mdc-row:nth-child(even){
+		background: rgba(0,0,0,.01);
+	}
+
+	.mat-column-id, .mat-column-actions {
+		width: 180px;
+		text-align: center;
+	}
+
+	.mat-column-order {
+		text-align: center;
+
+		.order {
+			font-family: 'digital';
+			color: #ff0000;
+			font-size: 24px;
+		}
+	}
+}
