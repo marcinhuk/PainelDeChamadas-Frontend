@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
-import { PedidosService } from '../../../services/pedidos/pedidos.service'
+import { OrdersService } from '../../../services/orders/orders.service'
 
 import { TableComponent } from './table/table.component'
 
@@ -34,7 +34,7 @@ export class AdminComponent {
 	dataGridHeight: number = 0
 	qtdRegistro: string = ''
 
-	constructor(private pedidosService: PedidosService, private formBuilder: FormBuilder){
+	constructor(private ordersService: OrdersService, private formBuilder: FormBuilder){
 		this.formGroupOrder = this.formBuilder.group({
 			order: ['', Validators.required]
 		})
@@ -57,14 +57,14 @@ export class AdminComponent {
 	}
 
 	getOrders = () => {
-		this.pedidosService.getOrders().subscribe((data) => {
+		this.ordersService.getOrders().subscribe((data) => {
 			this.dataSource = data
 			this.qtdRegistro = data.length == 0 ? 'No orders.' : data.length == 1 ? `${data.length} order.` : `${data.length} orders.`
 		})
 	}
 
 	getConfigs = () => {
-		this.pedidosService.getConfigs().subscribe((data) => {
+		this.ordersService.getConfigs().subscribe((data) => {
 			this.sound = data[1].value
 			this.layout = data[0].value
 			this.formGroupLayout.controls['layout'].setValue(this.layout)
@@ -72,24 +72,24 @@ export class AdminComponent {
 	}
 
 	postOrder = () => {
-		this.pedidosService.postOrder(this.formGroupOrder.controls['order'].value).subscribe((data) => {
+		this.ordersService.postOrder(this.formGroupOrder.controls['order'].value).subscribe((data) => {
 			this.getOrders()
 			this.formGroupOrder.reset()
 		})
 	}
 
 	deleteOrder = (id: string) => {
-		this.pedidosService.deleteOrder(id).subscribe((data) => {
+		this.ordersService.deleteOrder(id).subscribe((data) => {
 			this.getOrders()
 		})
 	}
 
 	patchLayout = () => {
-		this.pedidosService.patchLayout(this.formGroupLayout.controls['layout'].value).subscribe()
+		this.ordersService.patchLayout(this.formGroupLayout.controls['layout'].value).subscribe()
 	}
 
 	patchSound = () => {
-		this.pedidosService.patchSound(!this.sound).subscribe(() => {
+		this.ordersService.patchSound(!this.sound).subscribe(() => {
 			this.sound = !this.sound
 		})
 	}

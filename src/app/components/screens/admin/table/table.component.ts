@@ -3,7 +3,7 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
 import { MatIconModule } from '@angular/material/icon'
 import { MatTableModule } from '@angular/material/table'
 
-import { PedidosService } from '../../../../services/pedidos/pedidos.service'
+import { OrdersService } from '../../../../services/orders/orders.service'
 
 @Component({
 	selector: 'app-table',
@@ -18,12 +18,12 @@ export class TableComponent implements AfterViewInit {
 	@Input() dataSource: any
 	@Output("list") list: EventEmitter<any> = new EventEmitter()
 
-	constructor(private pedidosService: PedidosService){}
+	constructor(private ordersService: OrdersService){}
 
 	ngAfterViewInit(): void {}
 
 	delete = (id: string) => {
-		this.pedidosService.deleteOrder(id).subscribe(() => {
+		this.ordersService.deleteOrder(id).subscribe(() => {
 			this.list.emit()
 		})
 	}

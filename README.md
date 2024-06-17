@@ -2,7 +2,7 @@
 
 Esse aplicativo pode ser usado como um painel eletrônico para lanchonetes.
 
-### Panel (tela para os clientes:)
+### Panel (tela para os clientes)
 ![Panel image](src/assets/images/readme/panel.webp)
 
 ## Admin

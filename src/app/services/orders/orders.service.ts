@@ -1,22 +1,14 @@
 import { Injectable, inject } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable, Subject, map } from 'rxjs'
-
-import { io } from 'socket.io-client'
+import { Observable, map } from 'rxjs'
 
 import { API_BASE_URL } from '../../../environments/environment.pd'
-import { SOCKET_IO_BASE_URL } from '../../../environments/environment.pd'
 
 @Injectable({
 	providedIn: 'root'
 })
 
-export class PedidosService {
-
-	socket = io(SOCKET_IO_BASE_URL)
-	sound$: Subject<any> = new  Subject<any>()
-	layout$: Subject<any> = new  Subject<any>()
-	orders$: Subject<any> = new  Subject<any>()
+export class OrdersService {
 
 	httpClient = inject(HttpClient)
 
@@ -55,33 +47,5 @@ export class PedidosService {
 		return this.httpClient.patch<any>(API_BASE_URL+'/configs/layout', {value: quantidade}).pipe(
 			map(obj => obj)
 		)
-	}
-
-	listenerSound = (): Observable<any> => {
-		this.socket.on('receivedSound', (sound) => {
-			this.sound$.next(sound)
-		})
-
-		return this.sound$.asObservable()
-	}
-
-	listenerLayout = (): Observable<any> => {
-		this.socket.on('receivedLayout', (layout) => {
-			this.layout$.next(layout)
-		})
-
-		return this.layout$.asObservable()
-	}
-
-	listenerOrders = (): Observable<any> => {
-		this.socket.on('receivedOrders', (orders) => {
-			this.orders$.next(orders)
-		})
-
-		return this.orders$.asObservable()
-	}
-
-	getInicialInformations = () => {
-		this.socket.emit('inicialInformations')
 	}
 }

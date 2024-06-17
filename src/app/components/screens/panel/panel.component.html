@@ -1,13 +1,22 @@
 <main>
 
-	<section class="grid grid{{ layout }}">
+	<section class="grid grid{{ layout }}" *ngIf="!maxClients">
 
 		<article class="pedido" *ngFor="let item of dataSource | slice : 0 : amountOrders">{{ item.order }}</article>
 
 	</section>
 
+	<section class="maxClients" *ngIf="maxClients">
+
+		<p>The maximum number of connected clients has been reached.</p>
+
+	</section>
+
 	<button mat-mini-fab color="basic" class="link" routerLink="admin">
+
 		<mat-icon>admin_panel_settings</mat-icon>
+
 	</button>
+
 
 </main>
