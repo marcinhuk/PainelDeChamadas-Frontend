@@ -16,12 +16,16 @@ Nesse projeto foi usado o Angular 17 e o Socket.io para envio e recebimento das 
 
 # Detalhes para execução do projeto:
 
-#### Ambientes:
-
-1. src/environments/environments.dv.ts
-2. src/environments/environments.pd.ts
-
-#### Variáveis de ambiente:
-
-1. export const API_BASE_URL = 'http://localhost:3000'
-2. export const SOCKET_IO_BASE_URL = 'http://localhost:3000'
+1. Entrar no diretório onde o projeto será clonado;
+2. Abrir o Git Bash;
+3. Executar git clone https://github.com/marcinhuk/PainelDeChamadas-Frontend.git;
+4. Executar cd ./PainelDeChamadas-Frontend;
+5. Executar npm install;
+6. Criar a pasta "environments" dentro de "/src";
+6. Criar os arquivos abaixo dentro da pasta "/src/environments":
+	- environments.dv.ts
+	- environments.pd.ts
+7. Dentro de cada arquivo crias as variáveis abaixo:
+	- export const API_BASE_URL = 'http://localhost:3000'
+	- export const SOCKET_IO_BASE_URL = 'http://localhost:3000'
+8. Executar npm start.
