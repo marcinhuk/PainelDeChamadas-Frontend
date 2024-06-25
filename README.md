@@ -14,7 +14,7 @@ Esse aplicativo pode ser usado como um painel eletrônico para lanchonetes.
 
 Nesse projeto foi usado o Angular 17 e o Socket.io para envio e recebimento das informações em tempo real.
 
-#### 🔨 Detalhes para execução do projeto:
+## 🔨 Detalhes para execução do projeto:
 
 1. Entrar no diretório onde o projeto será clonado;
 2. Abrir o Git Bash;
