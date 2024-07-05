@@ -25,7 +25,7 @@ Nesse projeto foi usado o Angular 17 e o Socket.io para envio e recebimento das 
 6. Criar os arquivos abaixo dentro da pasta "/src/environments":
 	- environments.dv.ts
 	- environments.pd.ts
-7. Dentro de cada arquivo criar as variáveis abaixo:
+7. Dentro de cada arquivo criar as constantes abaixo:
 
 ```javascript
 	export const API_BASE_URL = 'http://localhost:3000'
